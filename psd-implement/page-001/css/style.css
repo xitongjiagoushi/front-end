@@ -1,0 +1,128 @@
+html {
+	height: 100%;
+}
+
+body {
+	min-height: 100%;
+	/* 字体大小/行高/字体 */
+	font: 12px / 1.625 OpenSans, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	color: #565656;
+}
+
+/* Layout */
+.container {
+	width: 1105px;
+	/* 居中begins */
+	margin-left: auto;
+	margin-right: auto;
+	/* 居中ends */
+}
+
+/* 清除浮动begins */
+.clearfix:before,
+.clearfix:after {
+	content: "";
+	display: table;
+}
+
+.clearfix:after {
+	clear: both;
+	overflow: hidden;
+}
+/* 清除浮动ends */
+
+.banner .container {
+	width: 100%;
+}
+
+/* Header */
+.header {
+	padding: 28px 0 15px;
+}
+
+.logo {
+	float: left;
+	margin: 0 14px 0 0;
+	width: 137px;
+	height: 43px;
+}
+
+.logo a {
+	display: block;
+	height: 43px;
+	background: url("../images/logo.png") no-repeat;
+	text-indent: -999999em;
+	overflow: hidden;
+}
+
+.slogan {
+	float: left;
+	color: #20304d;
+	font-size: 16px;
+	line-height: 43px;
+	text-transform: uppercase;
+}
+
+.menu {
+	float: right;
+}
+
+.menu ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.menu li {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	float: left;
+
+}
+
+.menu .dropdown {
+	position: relative;
+}
+
+.menu .dropdown:hover .dropdown-menu {
+	display: block;
+}
+
+.menu a {
+	color: #535353;
+	font-style: 12px;
+	line-height: 43px;
+	display: block;
+	text-transform: uppercase;
+	text-decoration: none;
+	padding: 0 20px;
+}
+
+.menu a:hover {
+	color: #275;
+}
+
+.menu .dropdown-menu {
+	position: absolute;
+	background: #142d5b;
+	padding: 15px 0 10px;
+	left: 0;
+	top: 58px;
+	display: none:
+}
+
+.dropdown-menu a {
+	line-height: 22px;
+	color: #ffffff;
+	font-size: 12px;
+	padding: 0 20px;
+	text-transform: capitalize;
+	/* 防止断行 */
+	white-space: normal;
+}
+
+.dropdown-menu a:hover {
+	color: #3d3d3d;
+	background: #ffffff;
+}
