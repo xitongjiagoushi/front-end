@@ -78,15 +78,10 @@ body {
 	margin: 0;
 	padding: 0;
 	float: left;
-
 }
 
 .menu .dropdown {
 	position: relative;
-}
-
-.menu .dropdown:hover .dropdown-menu {
-	display: block;
 }
 
 .menu a {
@@ -94,13 +89,14 @@ body {
 	font-style: 12px;
 	line-height: 43px;
 	display: block;
+	/* 全部字母大写 */
 	text-transform: uppercase;
 	text-decoration: none;
 	padding: 0 20px;
 }
 
 .menu a:hover {
-	color: #275;
+	color: #275eee;
 }
 
 .menu .dropdown-menu {
@@ -109,20 +105,51 @@ body {
 	padding: 15px 0 10px;
 	left: 0;
 	top: 58px;
-	display: none:
+	z-index: 99999;
+	/*display: none;*/
 }
 
-.dropdown-menu a {
+.menu .dropdown:hover .dropdown-menu {
+	display: block;
+}
+
+.menu .dropdown-menu a {
 	line-height: 22px;
 	color: #ffffff;
 	font-size: 12px;
 	padding: 0 20px;
+	/* 首字母大写 */
 	text-transform: capitalize;
 	/* 防止断行 */
-	white-space: normal;
+	white-space: nowrap;
 }
 
+.menu .dropdown-menu li {
+	width: 100%;
+}
+
+/* attention: 如果没有设置.dropdown-menu的z-index，则不生效 */
 .dropdown-menu a:hover {
 	color: #3d3d3d;
 	background: #ffffff;
 }
+
+
+/* footer-info */
+.footer-info .block-progress h3 {
+	text-transform: uppercase;
+	/* nonsense */
+	border-bottom: 1px;
+	border-color: 000000;
+}
+.footer-info .block-progress ul, .footer-info .block-progress li {
+	list-style: none;
+} 
+.footer-info .block-progress li {
+	float: left;
+}
+/*
+.footer-info .block-contact {
+	float: left
+}
+*/
