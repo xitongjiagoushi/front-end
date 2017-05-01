@@ -1,0 +1,151 @@
+/* 清除所有内/外边距 */
+* {
+	padding: 0;
+	margin: 0;
+}
+
+/* 垂直菜单begins */
+nav.list-vertical {
+	/* 首字母大写 */
+	text-transform: capitalize;
+	margin: 50px;
+	width: 150px;
+}
+nav.list-vertical ul {
+	width: 100px;
+	border: 1px solid #000000;
+	border-radius: 3px;
+	padding: 5px 10px 3px;
+}
+nav.list-vertical a {
+	text-decoration: none;
+	color: #000000;
+	font: 20px Exo, helvetica, arial, sans-serif;
+	font-weight: 400;
+	/* 将父元素的padding拿到a中 */
+	padding: 3px 10px;
+	/* 扩展到父元素(li)宽度 */
+	display: block;
+}
+nav.list-vertical a:hover {
+	color: #006699;
+}
+nav.list-vertical li {
+	list-style-type: none;
+}
+/* li+li 排除首个li元素 */
+nav.list-vertical li+li a {
+	border-top: 1px solid #000000;
+}
+/* 垂直菜单ends */
+
+
+/* 水平菜单begins */
+nav.list-horizental {
+	text-transform: capitalize;
+	margin: 50px;
+}
+nav.list-horizental ul {
+	border: 1px solid #000000;
+	border-radius: 3px;
+	padding: 1px 0;
+	/* 强制ul包裹其float的字元素li */
+	display: inline-block;
+	/*
+		包裹的另外两种方式：
+		1. overflow: hidden;  该方式不适用于多级菜单
+		2. float: left;  使父元素(ul)也浮动起来，可用于多级菜单，但需要清除浮动
+		display: inline-block; 更方便，更通用
+	*/
+}
+nav.list-horizental li {
+	float: left;
+	list-style-type: none;
+}
+nav.list-horizental a {
+	text-decoration: none;
+	font: 20px Exo, helvetica, arial, sans-serif;
+	font-weight: 400;
+	color: #000000;
+	/* 扩展到父元素(li)宽度 */
+	display: block;
+	padding: 0px 16px;
+}
+nav.list-horizental a:hover {
+	color: #006699;
+}
+nav.list-horizental li + li a {
+	border-left: 1px solid #000000;
+}
+/* 水平菜单ends */
+
+
+/* 多级菜单begins */
+nav.list-multi-level {
+	text-transform: capitalize;
+	margin: 50px;
+}
+nav.list-multi-level ul {
+	border: 1px solid #000000;
+	border-radius: 3px;
+	/* 强制ul包裹其float的字元素li */
+	display: inline-block;
+}
+nav.list-multi-level li {
+	list-style-type: none;
+	float: left;
+	/* 为子菜单提供定位上下文 */
+	position: relative;
+}
+/* 清除首个li>a中可能存在的多余边框 */
+nav.list-multi-level li:first-child a {
+	border: none;
+}
+nav.list-multi-level a {
+	text-decoration: none;
+	font: 20px exo, helvetica, arial, sans-serif;
+	font-weight: 400;
+	color: #000000;
+	display: block;
+	padding: 2px 16px;
+}
+/* 将hover设置给li，可以显示nav路径，可对比以下实现方式：
+nav.list-multi-level a:hover {
+	background: #ababab;
+}
+*/
+nav.list-multi-level li:hover > a {
+	background: #ababab;
+}
+nav.list-multi-level li + li a {
+	border-left: 1px solid #000000;
+}
+/* 二级菜单 */
+nav.list-multi-level li ul {
+	display: none;
+	position: absolute;
+	left: 0;
+	top: 100%;
+}
+nav.list-multi-level li li {
+	white-space: nowrap;
+	width: 100%;
+}
+nav.list-multi-level li:hover > ul {  /*对多级菜单均有效*/
+	display: block;
+}
+nav.list-multi-level li li + li a {
+	border-left: none;
+	border-top: 1px solid #000000;
+}
+/* 三级/多级菜单 */
+nav.list-multi-level li li ul {
+	position: absolute;
+	left: 100%;
+	top: 0;
+}
+nav.list-multi-level li li li + li a {
+	border-top: 1px solid #000000;
+}
+/* 之后无需改动CSS，修改HTML，随意添加多级菜单即可 */
+/* 多级菜单ends */

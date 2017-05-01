@@ -19,13 +19,13 @@ body {
 }
 
 /* 清除浮动begins */
-.clearfix:before,
-.clearfix:after {
+.clearfix::before,
+.clearfix::after {
 	content: "";
 	display: table;
 }
 
-.clearfix:after {
+.clearfix::after {
 	clear: both;
 	overflow: hidden;
 }
