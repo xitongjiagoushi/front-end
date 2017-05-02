@@ -1,0 +1,78 @@
+/* 文字包围图片 begins */
+.surrounded p {
+	margin: 0;
+	border: 1px solid red;
+}
+/* 外边距防止图片紧挨文本 */
+.surrounded img {
+	float: left;
+	margin:0 4px 4px 0;
+}
+/* 文字包围图片 ends */
+
+
+/* 两栏布局 begins */
+.multi-column p {
+	margin: 0;
+	border: 1px solid red;
+	/* 多栏，需要两步：
+		1. 设置段落宽度
+		2. 浮动 */
+	width: 90px;
+	float: left;
+}
+.multi-column img {
+	float: left;
+	margin: 0 4px 4px 0;
+}
+/* 两栏布局 ends */
+
+
+/* 强迫父元素包围子元素 begins */
+section.wrapped {
+	border: 1px solid;
+	margin: 0 0 10px 0;
+	/* 包裹方式一 */
+	/*overflow: hidden;*/
+	/* 包裹方式二(注意不仅要让父元素浮动，还要添加width使其保持原有宽度，同时需要紧邻同级元素清除浮动) */
+	/*
+	float: left;
+	width: 100%;
+	*/	
+	/* 包裹方式三(注意不仅要让父元素浮动，还要添加width使其保持原有宽度) */
+	/*
+	display: inline-block;
+	width: 100%;
+	*/
+}
+.wrapped p {
+	margin: 0;
+}
+section.wrapped + footer {
+	border: 1px solid;
+	/* 包裹方式二 */
+	/*clear: left;*/
+}
+.wrapped img {
+	/*float: left;*/  /* 图片浮动后，边框不能再包裹住图片 */
+	margin: 0 4px 4px 0;
+}
+/* 包裹方式四(需要在父元素section上添加clearfix类 */
+/* 清除浮动方式一 */
+.clearfix::before, .clearfix::after {
+	content: "";
+	display: table;
+}
+.clearfix::after {
+	clear: both;
+	overflow: hidden;
+}
+/* 清除浮动方式二 */
+.clearfix-another::after {
+	content: "";
+	display: block;
+	height: 0;
+	visibility: hidden;
+	clear: both;
+}
+/* 强迫父元素包围子元素 ends */
